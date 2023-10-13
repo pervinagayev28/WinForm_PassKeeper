@@ -67,6 +67,7 @@
             btn_register.TabIndex = 2;
             btn_register.Text = "Register";
             btn_register.UseVisualStyleBackColor = false;
+            btn_register.Click += btn_register_Click;
             // 
             // lbl_by_product
             // 
@@ -83,7 +84,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(357, 653);
-            ControlBox = false;
             Controls.Add(lbl_by_product);
             Controls.Add(btn_register);
             Controls.Add(btn_sign_in);
@@ -91,6 +91,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "form_home";
             Text = "Home";
+            FormClosing += form_home_FormClosing;
             Load += Form1_Load;
             ResumeLayout(false);
         }

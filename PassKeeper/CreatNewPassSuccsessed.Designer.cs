@@ -74,13 +74,13 @@
             button1.TabIndex = 24;
             button1.Text = "Go to sign in page";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // CreatNewPassSuccsessed
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(357, 653);
-            ControlBox = false;
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(lbl_logo);
@@ -88,6 +88,8 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "CreatNewPassSuccsessed";
             Text = "Creat New Pass Succsessed";
+            FormClosing += CreatNewPassSuccsessed_FormClosing;
+            Load += CreatNewPassSuccsessed_Load;
             ResumeLayout(false);
         }
 

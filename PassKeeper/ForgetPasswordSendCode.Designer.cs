@@ -32,6 +32,7 @@
             tbox_resend_code_gmail = new TextBox();
             btn_sign_in = new Button();
             label1 = new Label();
+            lbl_gmail_error = new Label();
             SuspendLayout();
             // 
             // lbl_logo
@@ -53,6 +54,9 @@
             tbox_resend_code_gmail.Size = new Size(260, 60);
             tbox_resend_code_gmail.TabIndex = 5;
             tbox_resend_code_gmail.Text = " e-mail";
+            tbox_resend_code_gmail.TextChanged += tbox_resend_code_gmail_TextChanged;
+            tbox_resend_code_gmail.MouseEnter += tbox_resend_code_gmail_MouseEnter;
+            tbox_resend_code_gmail.MouseLeave += tbox_resend_code_gmail_MouseLeave;
             // 
             // btn_sign_in
             // 
@@ -66,6 +70,7 @@
             btn_sign_in.TabIndex = 7;
             btn_sign_in.Text = "Send code";
             btn_sign_in.UseVisualStyleBackColor = false;
+            btn_sign_in.Click += btn_sign_in_Click;
             // 
             // label1
             // 
@@ -76,12 +81,24 @@
             label1.TabIndex = 8;
             label1.Text = "a product by Product Design LLC";
             // 
+            // lbl_gmail_error
+            // 
+            lbl_gmail_error.BackColor = SystemColors.Control;
+            lbl_gmail_error.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_gmail_error.ForeColor = Color.Crimson;
+            lbl_gmail_error.Location = new Point(54, 323);
+            lbl_gmail_error.Name = "lbl_gmail_error";
+            lbl_gmail_error.Size = new Size(250, 25);
+            lbl_gmail_error.TabIndex = 32;
+            lbl_gmail_error.Text = "incorrect format";
+            lbl_gmail_error.Visible = false;
+            // 
             // ForgetPasswordSendCode
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(357, 653);
-            ControlBox = false;
+            Controls.Add(lbl_gmail_error);
             Controls.Add(label1);
             Controls.Add(btn_sign_in);
             Controls.Add(tbox_resend_code_gmail);
@@ -89,6 +106,8 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ForgetPasswordSendCode";
             Text = "Forget pass Send code";
+            FormClosing += ForgetPasswordSendCode_FormClosing;
+            Load += ForgetPasswordSendCode_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -99,5 +118,6 @@
         private TextBox tbox_resend_code_gmail;
         private Button btn_sign_in;
         private Label label1;
+        private Label lbl_gmail_error;
     }
 }

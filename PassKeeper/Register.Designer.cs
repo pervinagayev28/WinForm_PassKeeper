@@ -34,6 +34,9 @@
             tbox_lastname = new TextBox();
             tbox_email = new TextBox();
             btn_next = new Button();
+            lbl_name_error = new Label();
+            lbl_lastname_error = new Label();
+            lbl_gmail_error = new Label();
             SuspendLayout();
             // 
             // lbl_logo
@@ -58,13 +61,16 @@
             tbox_fisrtname.BorderStyle = BorderStyle.None;
             tbox_fisrtname.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             tbox_fisrtname.ForeColor = SystemColors.InactiveCaption;
-            tbox_fisrtname.Location = new Point(44, 261);
+            tbox_fisrtname.Location = new Point(44, 259);
             tbox_fisrtname.Multiline = true;
             tbox_fisrtname.Name = "tbox_fisrtname";
             tbox_fisrtname.Size = new Size(260, 60);
             tbox_fisrtname.TabIndex = 25;
             tbox_fisrtname.Text = " first name";
+            tbox_fisrtname.Click += tbox_fisrtname_Click;
             tbox_fisrtname.TextChanged += tbox_new_pass_TextChanged;
+            tbox_fisrtname.MouseEnter += tbox_fisrtname_MouseEnter;
+            tbox_fisrtname.MouseLeave += tbox_fisrtname_MouseLeave;
             // 
             // tbox_lastname
             // 
@@ -77,6 +83,8 @@
             tbox_lastname.Size = new Size(260, 60);
             tbox_lastname.TabIndex = 26;
             tbox_lastname.Text = " last name";
+            tbox_lastname.MouseEnter += tbox_lastname_MouseEnter;
+            tbox_lastname.MouseLeave += tbox_lastname_MouseLeave;
             // 
             // tbox_email
             // 
@@ -89,6 +97,10 @@
             tbox_email.Size = new Size(260, 60);
             tbox_email.TabIndex = 27;
             tbox_email.Text = " e-mail";
+            tbox_email.SizeChanged += tbox_email_SizeChanged;
+            tbox_email.TextChanged += tbox_email_TextChanged;
+            tbox_email.MouseEnter += tbox_email_MouseEnter;
+            tbox_email.MouseLeave += tbox_email_MouseLeave;
             // 
             // btn_next
             // 
@@ -102,13 +114,50 @@
             btn_next.TabIndex = 28;
             btn_next.Text = "Next";
             btn_next.UseVisualStyleBackColor = false;
+            btn_next.Click += btn_next_Click;
+            // 
+            // lbl_name_error
+            // 
+            lbl_name_error.BackColor = SystemColors.Control;
+            lbl_name_error.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_name_error.ForeColor = Color.Crimson;
+            lbl_name_error.Location = new Point(54, 312);
+            lbl_name_error.Name = "lbl_name_error";
+            lbl_name_error.Size = new Size(250, 25);
+            lbl_name_error.TabIndex = 29;
+            lbl_name_error.Text = "fill name please";
+            // 
+            // lbl_lastname_error
+            // 
+            lbl_lastname_error.BackColor = SystemColors.Control;
+            lbl_lastname_error.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_lastname_error.ForeColor = Color.Crimson;
+            lbl_lastname_error.Location = new Point(54, 388);
+            lbl_lastname_error.Name = "lbl_lastname_error";
+            lbl_lastname_error.Size = new Size(250, 25);
+            lbl_lastname_error.TabIndex = 30;
+            lbl_lastname_error.Text = "fill last name please";
+            // 
+            // lbl_gmail_error
+            // 
+            lbl_gmail_error.BackColor = SystemColors.Control;
+            lbl_gmail_error.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_gmail_error.ForeColor = Color.Crimson;
+            lbl_gmail_error.Location = new Point(54, 474);
+            lbl_gmail_error.Name = "lbl_gmail_error";
+            lbl_gmail_error.Size = new Size(250, 25);
+            lbl_gmail_error.TabIndex = 31;
+            lbl_gmail_error.Text = "fill gmail please";
+            lbl_gmail_error.Click += lbl_gmail_error_Click;
             // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(357, 653);
-            ControlBox = false;
+            Controls.Add(lbl_gmail_error);
+            Controls.Add(lbl_lastname_error);
+            Controls.Add(lbl_name_error);
             Controls.Add(btn_next);
             Controls.Add(tbox_email);
             Controls.Add(tbox_lastname);
@@ -118,6 +167,8 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Register";
             Text = "Register";
+            FormClosing += Register_FormClosing;
+            Load += Register_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -130,5 +181,8 @@
         private TextBox tbox_lastname;
         private TextBox tbox_email;
         private Button btn_next;
+        private Label lbl_name_error;
+        private Label lbl_lastname_error;
+        private Label lbl_gmail_error;
     }
 }

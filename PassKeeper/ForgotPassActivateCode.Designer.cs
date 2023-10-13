@@ -32,6 +32,7 @@
             lbl_logo = new Label();
             tbox_resend_code_gmail = new TextBox();
             btn_sign_in = new Button();
+            lbl_verifycode_error = new Label();
             SuspendLayout();
             // 
             // label1
@@ -50,6 +51,7 @@
             lbl_logo.Name = "lbl_logo";
             lbl_logo.Size = new Size(212, 41);
             lbl_logo.TabIndex = 10;
+            lbl_logo.Click += lbl_logo_Click;
             // 
             // tbox_resend_code_gmail
             // 
@@ -62,6 +64,8 @@
             tbox_resend_code_gmail.Size = new Size(260, 60);
             tbox_resend_code_gmail.TabIndex = 11;
             tbox_resend_code_gmail.Text = " code";
+            tbox_resend_code_gmail.MouseEnter += tbox_resend_code_gmail_MouseEnter;
+            tbox_resend_code_gmail.MouseLeave += tbox_resend_code_gmail_MouseLeave;
             // 
             // btn_sign_in
             // 
@@ -75,13 +79,26 @@
             btn_sign_in.TabIndex = 12;
             btn_sign_in.Text = "Submit";
             btn_sign_in.UseVisualStyleBackColor = false;
+            btn_sign_in.Click += btn_sign_in_Click;
+            // 
+            // lbl_verifycode_error
+            // 
+            lbl_verifycode_error.BackColor = SystemColors.Control;
+            lbl_verifycode_error.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_verifycode_error.ForeColor = Color.Crimson;
+            lbl_verifycode_error.Location = new Point(54, 323);
+            lbl_verifycode_error.Name = "lbl_verifycode_error";
+            lbl_verifycode_error.Size = new Size(250, 25);
+            lbl_verifycode_error.TabIndex = 31;
+            lbl_verifycode_error.Text = "incorrect verify code";
+            lbl_verifycode_error.Visible = false;
             // 
             // ForgotPassActivateCode
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(357, 653);
-            ControlBox = false;
+            Controls.Add(lbl_verifycode_error);
             Controls.Add(btn_sign_in);
             Controls.Add(tbox_resend_code_gmail);
             Controls.Add(lbl_logo);
@@ -89,6 +106,8 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ForgotPassActivateCode";
             Text = "Forgot Pass Activate Code";
+            FormClosing += ForgotPassActivateCode_FormClosing;
+            Load += ForgotPassActivateCode_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -97,7 +116,8 @@
 
         private Label label1;
         private Label lbl_logo;
-        private TextBox tbox_resend_code_gmail;
+        public TextBox tbox_resend_code_gmail;
         private Button btn_sign_in;
+        private Label lbl_verifycode_error;
     }
 }

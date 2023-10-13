@@ -33,6 +33,8 @@
             tbox_password = new TextBox();
             btn_confirm = new Button();
             label1 = new Label();
+            lbl_password_error = new Label();
+            lbl_password_error2 = new Label();
             SuspendLayout();
             // 
             // lbl_logo
@@ -54,6 +56,8 @@
             tbox_confirm_oass.Size = new Size(260, 60);
             tbox_confirm_oass.TabIndex = 26;
             tbox_confirm_oass.Text = " confirm pass";
+            tbox_confirm_oass.MouseEnter += tbox_confirm_oass_MouseEnter;
+            tbox_confirm_oass.MouseLeave += tbox_confirm_oass_MouseLeave;
             // 
             // tbox_password
             // 
@@ -66,6 +70,8 @@
             tbox_password.Size = new Size(260, 60);
             tbox_password.TabIndex = 27;
             tbox_password.Text = " password";
+            tbox_password.MouseEnter += tbox_password_MouseEnter;
+            tbox_password.MouseLeave += tbox_password_MouseLeave;
             // 
             // btn_confirm
             // 
@@ -79,6 +85,7 @@
             btn_confirm.TabIndex = 29;
             btn_confirm.Text = "Confirm";
             btn_confirm.UseVisualStyleBackColor = false;
+            btn_confirm.Click += btn_confirm_Click;
             // 
             // label1
             // 
@@ -89,12 +96,38 @@
             label1.TabIndex = 30;
             label1.Text = "a product by Product Design LLC";
             // 
+            // lbl_password_error
+            // 
+            lbl_password_error.BackColor = SystemColors.Control;
+            lbl_password_error.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_password_error.ForeColor = Color.Crimson;
+            lbl_password_error.Location = new Point(54, 312);
+            lbl_password_error.Name = "lbl_password_error";
+            lbl_password_error.Size = new Size(250, 25);
+            lbl_password_error.TabIndex = 31;
+            lbl_password_error.Text = "write a strong pass";
+            lbl_password_error.Click += lbl_password_error_Click;
+            // 
+            // lbl_password_error2
+            // 
+            lbl_password_error2.BackColor = SystemColors.Control;
+            lbl_password_error2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_password_error2.ForeColor = Color.Crimson;
+            lbl_password_error2.Location = new Point(54, 393);
+            lbl_password_error2.Name = "lbl_password_error2";
+            lbl_password_error2.Size = new Size(250, 25);
+            lbl_password_error2.TabIndex = 32;
+            lbl_password_error2.Text = "password doesn't suit";
+            lbl_password_error2.Visible = false;
+            // 
             // RegistrPassword
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(357, 653);
             ControlBox = false;
+            Controls.Add(lbl_password_error2);
+            Controls.Add(lbl_password_error);
             Controls.Add(label1);
             Controls.Add(btn_confirm);
             Controls.Add(tbox_password);
@@ -103,6 +136,8 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "RegistrPassword";
             Text = "Registr Password";
+            FormClosing += RegistrPassword_FormClosing;
+            Load += RegistrPassword_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -114,5 +149,7 @@
         private TextBox tbox_password;
         private Button btn_confirm;
         private Label label1;
+        private Label lbl_password_error;
+        private Label lbl_password_error2;
     }
 }

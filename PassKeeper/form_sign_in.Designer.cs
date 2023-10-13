@@ -34,6 +34,7 @@
             btn_sign_in = new Button();
             label1 = new Label();
             lbl_forgotpassword = new Label();
+            lbl_not_found_account = new Label();
             SuspendLayout();
             // 
             // lbl_logo
@@ -91,6 +92,7 @@
             btn_sign_in.TabIndex = 6;
             btn_sign_in.Text = "Sign in";
             btn_sign_in.UseVisualStyleBackColor = false;
+            btn_sign_in.Click += btn_sign_in_Click;
             // 
             // label1
             // 
@@ -109,6 +111,21 @@
             lbl_forgotpassword.Size = new Size(166, 22);
             lbl_forgotpassword.TabIndex = 8;
             lbl_forgotpassword.Text = "Forgot password? renew it!";
+            lbl_forgotpassword.Click += lbl_forgotpassword_Click;
+            lbl_forgotpassword.MouseEnter += lbl_forgotpassword_MouseEnter;
+            lbl_forgotpassword.MouseLeave += lbl_forgotpassword_MouseLeave;
+            // 
+            // lbl_not_found_account
+            // 
+            lbl_not_found_account.BackColor = SystemColors.Control;
+            lbl_not_found_account.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_not_found_account.ForeColor = Color.Crimson;
+            lbl_not_found_account.Location = new Point(89, 401);
+            lbl_not_found_account.Name = "lbl_not_found_account";
+            lbl_not_found_account.Size = new Size(140, 25);
+            lbl_not_found_account.TabIndex = 33;
+            lbl_not_found_account.Text = "not found account";
+            lbl_not_found_account.Visible = false;
             // 
             // form_sign_in
             // 
@@ -116,7 +133,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(357, 653);
-            ControlBox = false;
+            Controls.Add(lbl_not_found_account);
             Controls.Add(lbl_forgotpassword);
             Controls.Add(label1);
             Controls.Add(btn_sign_in);
@@ -126,6 +143,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "form_sign_in";
             Text = "Sig in";
+            FormClosing += form_sign_in_FormClosing;
             Load += form_sign_in_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -133,11 +151,12 @@
 
         #endregion
 
-        private Label lbl_logo;
-        private TextBox tbox_log_in;
-        private TextBox tbox_password;
-        private Button btn_sign_in;
-        private Label label1;
-        private Label lbl_forgotpassword;
+        public Label lbl_logo;
+        public TextBox tbox_log_in;
+        public TextBox tbox_password;
+        public Button btn_sign_in;
+        public Label label1;
+        public Label lbl_forgotpassword;
+        private Label lbl_not_found_account;
     }
 }

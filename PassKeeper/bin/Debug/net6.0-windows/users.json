@@ -1,0 +1,72 @@
+[
+  {
+    "FirstName": "Pervin",
+    "LastName": "Agayev",
+    "Email": "pervinagayev@gmail.com",
+    "Password": "pervinA@1",
+    "ImagePath": null
+  },
+  {
+    "FirstName": "Jhon",
+    "LastName": "Aliyev",
+    "Email": "pervinagayev28@gmail.com",
+    "Password": "Salam123@",
+    "ImagePath": null
+  },
+  {
+    "FirstName": "Rubail",
+    "LastName": "Rehmanli",
+    "Email": "rubu@gmail.com",
+    "Password": "Rubu123_",
+    "ImagePath": null
+  },
+  {
+    "FirstName": "Fermayil",
+    "LastName": "Hesenov",
+    "Email": "frmayilhsnov@gmail.com",
+    "Password": "NeIsterse123",
+    "ImagePath": null
+  },
+  {
+    "FirstName": "Amil",
+    "LastName": "Amilov",
+    "Email": "Amilli@gmail.com",
+    "Password": "Amil123_",
+    "ImagePath": null
+  },
+  {
+    "FirstName": "Kerim",
+    "LastName": "Kerimli",
+    "Email": "kerim@gmail.com",
+    "Password": "Kerim123_",
+    "ImagePath": null
+  },
+  {
+    "FirstName": "Samirr",
+    "LastName": "Smairli",
+    "Email": "samir@gmail.com",
+    "Password": "Smair123_",
+    "ImagePath": null
+  },
+  {
+    "FirstName": "Xeyal",
+    "LastName": "Xeyalli",
+    "Email": "xeyal@gmail.com",
+    "Password": "Xeyal123_",
+    "ImagePath": null
+  },
+  {
+    "FirstName": "Jhon",
+    "LastName": "Jhonlu",
+    "Email": "pervinagayev28@gmail.com",
+    "Password": "Jhon123_",
+    "ImagePath": null
+  },
+  {
+    "FirstName": "Jeck",
+    "LastName": "Jeckli",
+    "Email": "Jeck@gmail.com",
+    "Password": "Jeck123_",
+    "ImagePath": null
+  }
+]

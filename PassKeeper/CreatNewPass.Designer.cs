@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             tbox_new_pass = new TextBox();
-            textBox1 = new TextBox();
+            tbox_confirmpass = new TextBox();
             btn_update_pass = new Button();
             lbl_logo = new Label();
             label1 = new Label();
+            lbl_password_error = new Label();
+            lbl_confirm_pass = new Label();
             SuspendLayout();
             // 
             // tbox_new_pass
@@ -40,24 +42,29 @@
             tbox_new_pass.BorderStyle = BorderStyle.None;
             tbox_new_pass.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             tbox_new_pass.ForeColor = SystemColors.InactiveCaption;
-            tbox_new_pass.Location = new Point(44, 261);
+            tbox_new_pass.Location = new Point(43, 251);
             tbox_new_pass.Multiline = true;
             tbox_new_pass.Name = "tbox_new_pass";
             tbox_new_pass.Size = new Size(260, 60);
             tbox_new_pass.TabIndex = 16;
             tbox_new_pass.Text = " new pass";
+            tbox_new_pass.TextChanged += tbox_new_pass_TextChanged;
+            tbox_new_pass.MouseEnter += tbox_new_pass_MouseEnter;
+            tbox_new_pass.MouseLeave += tbox_new_pass_MouseLeave;
             // 
-            // textBox1
+            // tbox_confirmpass
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = SystemColors.InactiveCaption;
-            textBox1.Location = new Point(44, 338);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 60);
-            textBox1.TabIndex = 17;
-            textBox1.Text = " confirm pass";
+            tbox_confirmpass.BorderStyle = BorderStyle.None;
+            tbox_confirmpass.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            tbox_confirmpass.ForeColor = SystemColors.InactiveCaption;
+            tbox_confirmpass.Location = new Point(44, 338);
+            tbox_confirmpass.Multiline = true;
+            tbox_confirmpass.Name = "tbox_confirmpass";
+            tbox_confirmpass.Size = new Size(260, 60);
+            tbox_confirmpass.TabIndex = 17;
+            tbox_confirmpass.Text = " confirm pass";
+            tbox_confirmpass.MouseEnter += textBox1_MouseEnter;
+            tbox_confirmpass.MouseLeave += tbox_confirmpass_MouseLeave;
             // 
             // btn_update_pass
             // 
@@ -71,6 +78,7 @@
             btn_update_pass.TabIndex = 18;
             btn_update_pass.Text = "Update password";
             btn_update_pass.UseVisualStyleBackColor = false;
+            btn_update_pass.Click += btn_update_pass_Click;
             // 
             // lbl_logo
             // 
@@ -89,20 +97,46 @@
             label1.TabIndex = 20;
             label1.Text = "a product by Product Design LLC";
             // 
+            // lbl_password_error
+            // 
+            lbl_password_error.BackColor = SystemColors.Control;
+            lbl_password_error.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_password_error.ForeColor = Color.Crimson;
+            lbl_password_error.Location = new Point(54, 324);
+            lbl_password_error.Name = "lbl_password_error";
+            lbl_password_error.Size = new Size(250, 25);
+            lbl_password_error.TabIndex = 32;
+            lbl_password_error.Text = "this password isn't strongly";
+            lbl_password_error.Visible = false;
+            // 
+            // lbl_confirm_pass
+            // 
+            lbl_confirm_pass.BackColor = SystemColors.Control;
+            lbl_confirm_pass.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_confirm_pass.ForeColor = Color.Crimson;
+            lbl_confirm_pass.Location = new Point(53, 393);
+            lbl_confirm_pass.Name = "lbl_confirm_pass";
+            lbl_confirm_pass.Size = new Size(250, 25);
+            lbl_confirm_pass.TabIndex = 33;
+            lbl_confirm_pass.Text = "this password doesn't suit another";
+            lbl_confirm_pass.Visible = false;
+            // 
             // CreatNewPass
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(357, 653);
-            ControlBox = false;
+            Controls.Add(lbl_confirm_pass);
+            Controls.Add(lbl_password_error);
             Controls.Add(label1);
             Controls.Add(lbl_logo);
             Controls.Add(btn_update_pass);
-            Controls.Add(textBox1);
+            Controls.Add(tbox_confirmpass);
             Controls.Add(tbox_new_pass);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "CreatNewPass";
             Text = "Creat New Pass";
+            FormClosing += CreatNewPass_FormClosing;
             Load += CreatNewPass_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -110,9 +144,11 @@
 
         #endregion
         private TextBox tbox_new_pass;
-        private TextBox textBox1;
+        private TextBox tbox_confirmpass;
         private Button btn_update_pass;
         private Label lbl_logo;
         private Label label1;
+        private Label lbl_password_error;
+        private Label lbl_confirm_pass;
     }
 }

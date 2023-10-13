@@ -16,5 +16,22 @@ namespace PassKeeper
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Forms.CreatNewPassSuccsessed.Close();
+            
+        }
+
+        private void CreatNewPassSuccsessed_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Forms.CreatNewPassSuccsessed.Dispose();
+
+        }
+
+        private void CreatNewPassSuccsessed_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
